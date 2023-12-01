@@ -85,6 +85,50 @@
             app:layout_constraintTop_toBottomOf="@+id/popMenuButton"
             app:srcCompat="@android:drawable/ic_menu_preferences" />
 
+        <TextView
+            android:id="@+id/homeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="40dp"
+            android:visibility="invisible"
+            android:text="Home"
+            app:layout_constraintStart_toEndOf="@+id/homeButton"
+            app:layout_constraintTop_toBottomOf="@+id/popMenuButton" />
+
+        <TextView
+            android:id="@+id/editGreenText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="124dp"
+            android:visibility="invisible"
+            android:text="Edit Green House"
+            app:layout_constraintStart_toEndOf="@+id/editGreenHouseButton"
+            app:layout_constraintTop_toBottomOf="@+id/popMenuButton" />
+
+        <TextView
+            android:id="@+id/tutorialText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="204dp"
+            android:visibility="invisible"
+            android:text="Tutorial"
+            app:layout_constraintStart_toEndOf="@+id/tutorialButton"
+            app:layout_constraintTop_toBottomOf="@+id/popMenuButton" />
+
+        <TextView
+            android:id="@+id/settingsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="284dp"
+            android:visibility="invisible"
+            android:text="Settings"
+            app:layout_constraintStart_toEndOf="@+id/settingButton"
+            app:layout_constraintTop_toBottomOf="@+id/popMenuButton" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
