@@ -1,13 +1,16 @@
 package com.bluehouse.bluehouse;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.Group;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -18,6 +21,10 @@ public class settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         FloatingActionButton popMenu = findViewById(R.id.popMenuButton);
+        Button link = findViewById(R.id.pair);
+        Group bottomMenu = findViewById(R.id.bottomMenu);
+        FloatingActionButton exit = findViewById(R.id.closeButton);
+        Button apply = findViewById(R.id.applyChanges);
 
         TextView homeText = findViewById(R.id.homeText);
         TextView settingsText = findViewById(R.id.settingsText);
@@ -114,5 +121,38 @@ public class settings extends AppCompatActivity {
 
             }
         });
+        
+    
+        link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Animation slidein = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bottomslideup);
+                bottomMenu.setVisibility(View.VISIBLE);
+                int[] views = bottomMenu.getReferencedIds();
+                for(int i = 0; i < views.length; i++){
+                    findViewById(views[i]).startAnimation(slidein);
+                }
+            }
+        });
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Animation slideout = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bottomslidedown);
+                bottomMenu.setVisibility(View.INVISIBLE);
+                int[] views = bottomMenu.getReferencedIds();
+                for(int i = 0; i < views.length; i++){
+                    findViewById(views[i]).startAnimation(slideout);
+                }
+            }
+        });
+        apply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //send a toast message saying that the changes have been applied
+                Toast.makeText(getApplicationContext(), "Changes Applied", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
+    
 }

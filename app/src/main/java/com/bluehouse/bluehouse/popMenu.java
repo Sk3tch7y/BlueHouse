@@ -26,6 +26,7 @@ public class popMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_menu);
         FloatingActionButton popMenu = findViewById(R.id.popMenuButton);
+        
 
         TextView homeText = findViewById(R.id.homeText);
         TextView settingsText = findViewById(R.id.settingsText);
