@@ -2,8 +2,14 @@ package com.bluehouse.bluehouse;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.Group;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -25,6 +31,7 @@ public class settings extends AppCompatActivity {
         Group bottomMenu = findViewById(R.id.bottomMenu);
         FloatingActionButton exit = findViewById(R.id.closeButton);
         Button apply = findViewById(R.id.applyChanges);
+        Button noti = findViewById(R.id.testNoti);
 
         TextView homeText = findViewById(R.id.homeText);
         TextView settingsText = findViewById(R.id.settingsText);
@@ -133,6 +140,37 @@ public class settings extends AppCompatActivity {
                     findViewById(views[i]).startAnimation(slidein);
                 }
             }
+        });
+        noti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //turn on notifications'
+                Intent intent = new Intent(getApplicationContext(), houseView.class);
+                intent.putExtra("house", "1");
+                PendingIntent notiPass = PendingIntent.getActivity(settings.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+                CharSequence name = "channel_name";
+                String description = "channel_description";
+                int imp = NotificationManager.IMPORTANCE_HIGH;
+                String ID = "BlueHouse";
+                NotificationChannel testChannel = new NotificationChannel(ID, name, imp);
+                testChannel.setDescription(description);
+                NotificationManager notificationManager = getSystemService(NotificationManager.class);
+                notificationManager.createNotificationChannel(testChannel);
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(settings.this, ID)
+                        .setSmallIcon(R.drawable.menuassetdark)
+                        .setContentTitle("BlueHouse Alert")
+                        .setContentText("Issue with your BlueHouse #1")
+                        .setPriority(imp)
+                        .setContentIntent(notiPass);
+
+
+                // notificationId is a unique int for each notification that you must define
+                int notificationId = 1;
+                notificationManager.notify(notificationId, builder.build());
+            }
+
+
+
         });
         exit.setOnClickListener(new View.OnClickListener() {
             @Override

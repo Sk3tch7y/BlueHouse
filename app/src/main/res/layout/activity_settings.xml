@@ -220,6 +220,7 @@
             android:layout_marginTop="504dp"
             android:background="@drawable/bottommenu"
             android:clickable="true"
+            android:elevation="2dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -235,6 +236,18 @@
             app:layout_constraintStart_toEndOf="@+id/key"
             app:layout_constraintTop_toBottomOf="@+id/pair"
             app:srcCompat="@android:drawable/ic_menu_send" />
+
+        <Button
+            android:id="@+id/testNoti"
+            android:layout_width="204dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="488dp"
+            android:backgroundTint="#FFEDE1"
+            android:text="Test notification on greenhouse one"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
