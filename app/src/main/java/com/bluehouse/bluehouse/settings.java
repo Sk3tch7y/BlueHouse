@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ public class settings extends AppCompatActivity {
         FloatingActionButton exit = findViewById(R.id.closeButton);
         Button apply = findViewById(R.id.applyChanges);
         Button noti = findViewById(R.id.testNoti);
+        ImageButton send = findViewById(R.id.sendId);
 
         TextView homeText = findViewById(R.id.homeText);
         TextView settingsText = findViewById(R.id.settingsText);
@@ -147,6 +149,9 @@ public class settings extends AppCompatActivity {
                 //turn on notifications'
                 Intent intent = new Intent(getApplicationContext(), houseView.class);
                 intent.putExtra("house", "1");
+                intent.putExtra("temp", "40");
+                intent.putExtra("hum", "50");
+                intent.putExtra("light", "10000 Lum");
                 PendingIntent notiPass = PendingIntent.getActivity(settings.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
                 CharSequence name = "channel_name";
                 String description = "channel_description";
@@ -188,6 +193,14 @@ public class settings extends AppCompatActivity {
             public void onClick(View view) {
                 //send a toast message saying that the changes have been applied
                 Toast.makeText(getApplicationContext(), "Changes Applied", Toast.LENGTH_SHORT).show();
+            }
+        });
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //send a toast message saying that the changes have been applied
+                Toast.makeText(getApplicationContext(), "BlueHouse device linked!", Toast.LENGTH_SHORT).show();
+                exit.callOnClick();
             }
         });
 

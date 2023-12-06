@@ -23,9 +23,9 @@ public class houseView extends AppCompatActivity {
             startActivity(homeInt);
         });
         edit.setOnClickListener(view -> {
-            //TODO: add edit activity
-            //Intent edit = new Intent(this, BlueHouse.class);
-            //startActivity(edit);
+
+            Intent ed = new Intent(houseView.this, beans.class);
+            startActivity(ed);
         });
         TextView tempText = findViewById(R.id.temperature);
         TextView humText = findViewById(R.id.humidity);

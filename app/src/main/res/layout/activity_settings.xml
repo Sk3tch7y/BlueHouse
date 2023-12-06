@@ -166,8 +166,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"
-            android:elevation="4dp"
-            app:constraint_referenced_ids="key,instructions,closeButton,connectView,imageButton" />
+            app:constraint_referenced_ids="key,instructions,closeButton,connectView,sendId" />
 
         <EditText
             android:id="@+id/key"
@@ -176,7 +175,7 @@
             android:layout_marginTop="28dp"
             android:backgroundTint="#FFEDE1"
             android:background="@drawable/textback"
-            android:elevation="2dp"
+            android:elevation="10dp"
             android:ems="10"
             android:inputType="text"
             android:padding="20dp"
@@ -193,7 +192,7 @@
             android:layout_height="40dp"
             android:layout_marginStart="40dp"
             android:layout_marginTop="16dp"
-            android:elevation="2dp"
+            android:elevation="10dp"
             android:text="Please input the BlueHouse Device ID provided with your BlueHouse Device"
             android:textAlignment="center"
             android:textColor="#000000"
@@ -208,6 +207,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:clickable="true"
+            android:elevation="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.045"
             app:layout_constraintStart_toStartOf="parent"
@@ -227,12 +227,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/sendId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
-
+            android:elevation="10dp"
             android:backgroundTint="#F9FBF2"
             app:layout_constraintStart_toEndOf="@+id/key"
             app:layout_constraintTop_toBottomOf="@+id/pair"
@@ -245,6 +245,7 @@
             android:layout_marginStart="100dp"
             android:layout_marginTop="488dp"
             android:backgroundTint="#FFEDE1"
+            android:elevation="10dp"
             android:text="Test notification on greenhouse one"
             android:textColor="#000000"
             app:layout_constraintStart_toStartOf="parent"
