@@ -43,8 +43,8 @@ public class settings extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Intent home = new Intent(this, HomeScreen.class);
-                //startActivity(home);
+                Intent home = new Intent(settings.this, HomeScreen.class);
+                startActivity(home);
             }
         });
 
@@ -60,15 +60,15 @@ public class settings extends AppCompatActivity {
         green.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent green = new Intent(this, BlueHouse.class);
-                //startActivity(green);
+                Intent green = new Intent(settings.this, beans.class);
+                startActivity(green);
             }
         });
         FloatingActionButton tutorial = findViewById(R.id.tutorialButton);
         tutorial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent tutorial = new Intent(this, Tutorial.class);
+                //Intent tutorial = new Intent(settings.this, Tutorial.class);
                 //startActivity(tutorial);
             }
         });

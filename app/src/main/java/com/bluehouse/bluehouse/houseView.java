@@ -19,9 +19,8 @@ public class houseView extends AppCompatActivity {
         Button edit = findViewById(R.id.edit);
         Intent prev = getIntent();
         home.setOnClickListener(view -> {
-            //TODO: add home activity
-            // Intent home = new Intent(this, HomeScreen.class);
-            //startActivity(home);
+            Intent homeInt = new Intent(this, HomeScreen.class);
+            startActivity(homeInt);
         });
         edit.setOnClickListener(view -> {
             //TODO: add edit activity
@@ -31,6 +30,8 @@ public class houseView extends AppCompatActivity {
         TextView tempText = findViewById(R.id.temperature);
         TextView humText = findViewById(R.id.humidity);
         TextView lightText = findViewById(R.id.lightLevel);
+        TextView nameText = findViewById(R.id.curGreenhouse);
+        nameText.setText("Green House #" + prev.getStringExtra("house"));
         tempText.setText(prev.getStringExtra("temp"));
         humText.setText(prev.getStringExtra("hum"));
         lightText.setText(prev.getStringExtra("light"));

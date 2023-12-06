@@ -3,6 +3,7 @@ package com.bluehouse.bluehouse;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.Group;
 //import floatinactionbutton.FloatingActionButton;
 
 import android.content.Intent;
@@ -25,14 +26,14 @@ public class popMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_menu);
-        FloatingActionButton popMenu = findViewById(R.id.popMenuButton);
-        
 
+        //code for buttons
+        FloatingActionButton popMenu = findViewById(R.id.popMenuButton);
         TextView homeText = findViewById(R.id.homeText);
         TextView settingsText = findViewById(R.id.settingsText);
         TextView greenText = findViewById(R.id.editGreenText);
         TextView tutorialText = findViewById(R.id.tutorialText);
-
+        Group sidemenu = findViewById(R.id.sidemenu);
 
         FloatingActionButton home = findViewById(R.id.homeButton);
         home.setOnClickListener(new View.OnClickListener() {
@@ -76,10 +77,9 @@ public class popMenu extends AppCompatActivity {
                 System.out.println(isMenuOpen[0]);
                 if(isMenuOpen[0]){
                     Animation slide_in = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slideanimation);
+                    sidemenu.setVisibility(View.VISIBLE);
                     //home
-                    home.setVisibility(View.VISIBLE);
                     home.startAnimation(slide_in);
-                    homeText.setVisibility(View.VISIBLE);
                     homeText.startAnimation(slide_in);
                     //settings
                     settings.setVisibility(View.VISIBLE);
@@ -87,38 +87,28 @@ public class popMenu extends AppCompatActivity {
                     settingsText.setVisibility(View.VISIBLE);
                     settingsText.startAnimation(slide_in);
                     //green
-                    green.setVisibility(View.VISIBLE);
                     green.startAnimation(slide_in);
-                    greenText.setVisibility(View.VISIBLE);
                     greenText.startAnimation(slide_in);
                     //tutorial
-                    tutorial.setVisibility(View.VISIBLE);
+
                     tutorial.startAnimation(slide_in);
-                    tutorialText.setVisibility(View.VISIBLE);
                     tutorialText.startAnimation(slide_in);
                 }
-                else{
+                else {
                     Animation slide_out = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slideout);
                     //home
                     home.startAnimation(slide_out);
-                    home.setVisibility(View.INVISIBLE);
                     homeText.startAnimation(slide_out);
-                    homeText.setVisibility(View.INVISIBLE);
                     //settings
                     settings.startAnimation(slide_out);
-                    settings.setVisibility(View.INVISIBLE);
                     settingsText.startAnimation(slide_out);
-                    settingsText.setVisibility(View.INVISIBLE);
                     //green
                     green.startAnimation(slide_out);
-                    green.setVisibility(View.INVISIBLE);
                     greenText.startAnimation(slide_out);
-                    greenText.setVisibility(View.INVISIBLE);
                     //tutorial
                     tutorial.startAnimation(slide_out);
-                    tutorial.setVisibility(View.INVISIBLE);
                     tutorialText.startAnimation(slide_out);
-                    tutorialText.setVisibility(View.INVISIBLE);
+                    sidemenu.setVisibility(View.INVISIBLE);
                 }
                 
             }

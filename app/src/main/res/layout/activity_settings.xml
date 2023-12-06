@@ -166,6 +166,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"
+            android:elevation="4dp"
             app:constraint_referenced_ids="key,instructions,closeButton,connectView,imageButton" />
 
         <EditText
