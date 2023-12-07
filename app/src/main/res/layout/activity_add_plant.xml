@@ -86,8 +86,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="65dp"
+        android:backgroundTint="#FFEDE1"
         android:onClick="onClickAddPlant"
         android:text="Add Plant"
+        android:textColor="#0C0C0C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.15"
@@ -100,8 +102,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="116dp"
         android:layout_marginBottom="64dp"
+        android:backgroundTint="#FFEDE1"
         android:onClick="returnClick"
         android:text="Done"
+        android:textColor="#0B0606"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

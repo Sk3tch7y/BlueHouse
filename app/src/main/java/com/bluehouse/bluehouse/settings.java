@@ -35,6 +35,15 @@ public class settings extends AppCompatActivity {
         Button noti = findViewById(R.id.testNoti);
         ImageButton send = findViewById(R.id.sendId);
 
+        //request notification permission
+        requestPermissions(new String[] {android.Manifest.permission.POST_NOTIFICATIONS}, 1);
+        NotificationChannel testChannel = new NotificationChannel("BlueHouse", "BlueHouse", NotificationManager.IMPORTANCE_HIGH);
+
+        testChannel.setDescription("BlueHouse Notification Channel");
+        NotificationManager manager = getSystemService(NotificationManager.class);
+        manager.createNotificationChannel(testChannel);
+
+
         TextView homeText = findViewById(R.id.homeText);
         TextView settingsText = findViewById(R.id.settingsText);
         TextView greenText = findViewById(R.id.editGreenText);
@@ -70,8 +79,8 @@ public class settings extends AppCompatActivity {
         tutorial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent tutorial = new Intent(settings.this, Tutorial.class);
-                //startActivity(tutorial);
+                Intent tutorial = new Intent(settings.this, Tutorial.class);
+                startActivity(tutorial);
             }
         });
 
@@ -147,18 +156,14 @@ public class settings extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //turn on notifications'
-                Intent intent = new Intent(getApplicationContext(), houseView.class);
+                Intent intent = new Intent(settings.this, houseView.class);
                 intent.putExtra("house", "1");
                 intent.putExtra("temp", "40");
                 intent.putExtra("hum", "50");
                 intent.putExtra("light", "10000 Lum");
                 PendingIntent notiPass = PendingIntent.getActivity(settings.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-                CharSequence name = "channel_name";
-                String description = "channel_description";
                 int imp = NotificationManager.IMPORTANCE_HIGH;
                 String ID = "BlueHouse";
-                NotificationChannel testChannel = new NotificationChannel(ID, name, imp);
-                testChannel.setDescription(description);
                 NotificationManager notificationManager = getSystemService(NotificationManager.class);
                 notificationManager.createNotificationChannel(testChannel);
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(settings.this, ID)
@@ -168,10 +173,10 @@ public class settings extends AppCompatActivity {
                         .setPriority(imp)
                         .setContentIntent(notiPass);
 
-
                 // notificationId is a unique int for each notification that you must define
                 int notificationId = 1;
-                notificationManager.notify(notificationId, builder.build());
+                NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(settings.this);
+                notificationManagerCompat.notify(notificationId, builder.build());
             }
 
 

@@ -10,20 +10,20 @@
         android:id="@+id/checkBox4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
         android:layout_marginTop="27dp"
         android:text="CheckBox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/checkBox5"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
     <CheckBox
         android:id="@+id/checkBox5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="3dp"
         android:text="CheckBox"
-        app:layout_constraintEnd_toEndOf="@+id/checkBox4"
+        app:layout_constraintStart_toStartOf="@+id/checkBox6"
         app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
 
     <CheckBox
@@ -31,21 +31,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="38dp"
-        android:layout_marginEnd="2dp"
         android:text="CheckBox"
-        app:layout_constraintEnd_toEndOf="@+id/checkBox5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox5" />
 
     <Button
         android:id="@+id/button9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="87dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="142dp"
+        android:layout_marginBottom="146dp"
+        android:backgroundTint="#FFEDE1"
         android:onClick="onClick"
         android:text="Confirm"
-        app:layout_constraintStart_toStartOf="@+id/checkBox6"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox6" />
+        android:textColor="#090404"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/checkBox6" />
 
     <TextView
         android:id="@+id/textView16"
@@ -68,4 +72,16 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="87dp"
+        android:backgroundTint="#FFEDE1"
+        android:onClick="onBeans"
+        android:text="Edit"
+        android:textColor="#070404"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button9"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NotificationView">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F9FBF2"
+        android:elevation="10dp"
+        tools:context=".popMenu"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="-69dp">
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/sidemenu"
+            android:layout_width="200dp"
+            android:layout_height="92dp"
+            android:elevation="20dp"
+            android:visibility="invisible"
+            app:constraint_referenced_ids="buttonContainer" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/popMenuButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="15dp"
+            android:clickable="true"
+            app:backgroundTint="#FFEDE1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="#FFEDE1"
+            app:srcCompat="@drawable/menuassetdark"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+        <LinearLayout
+            android:id="@+id/buttonContainer"
+            android:layout_width="181dp"
+            android:layout_height="225dp"
+            android:layout_below="@+id/popMenuButton"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/buttonback"
+            android:elevation="20dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+
+            <LinearLayout
+                android:id="@+id/home"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:elevation="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/homeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+
+                    app:backgroundTint="#D7F9FF"
+                    app:backgroundTintMode="add"
+                    app:layout_constraintBottom_toTopOf="@+id/editGreenHouseButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.045"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.814"
+                    app:srcCompat="@android:drawable/ic_menu_preferences" />
+
+                <TextView
+                    android:id="@+id/homeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+
+                    android:text="Home"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.214"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.127" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/editGreenHouse"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:elevation="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/editGreenHouseButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+
+                    app:backgroundTint="#D7F9FF"
+                    app:backgroundTintMode="add"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.045"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.213"
+                    app:srcCompat="@android:drawable/ic_menu_preferences" />
+
+                <TextView
+                    android:id="@+id/editGreenText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="Edit Green House"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.082"
+                    app:layout_constraintStart_toEndOf="@+id/editGreenHouseButton"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.235" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tutorial"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:elevation="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/tutorialButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+
+                    app:backgroundTint="#D7F9FF"
+                    app:backgroundTintMode="add"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.045"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.331"
+                    app:srcCompat="@android:drawable/ic_menu_preferences" />
+
+                <TextView
+                    android:id="@+id/tutorialText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+
+                    android:text="Tutorial"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.23"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/buttonContainer"
+                    app:layout_constraintVertical_bias="0.324" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/settings"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:elevation="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/settingButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+
+                    app:backgroundTint="#D7F9FF"
+                    app:backgroundTintMode="add"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.045"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/buttonContainer"
+                    app:layout_constraintVertical_bias="0.437"
+                    app:srcCompat="@android:drawable/ic_menu_preferences" />
+
+                <TextView
+                    android:id="@+id/settingsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+
+                    android:text="Settings"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.222"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/buttonContainer"
+                    app:layout_constraintVertical_bias="0.439" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/notification_icon_notification_screen"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/notification_icon" />
+
+        <TextView
+            android:id="@+id/notification_name_notification_screen"
+            android:layout_width="290dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="24dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notification_icon_notification_screen" />
+
+        <TextView
+            android:id="@+id/notification_content_notification_screen"
+            android:layout_width="312dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="24dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notification_name_notification_screen" />
+
+        <Button
+            android:id="@+id/return_home_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:text="Return Home"
+            android:backgroundTint="@color/beige"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

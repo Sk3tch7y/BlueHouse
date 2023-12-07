@@ -27,12 +27,16 @@ public class editGreen extends AppCompatActivity {
 
     }
     public void onClick(View v){
-        Intent intent = new Intent(editGreen.this, MainActivity.class);
+        Intent intent = new Intent(editGreen.this, beans.class);
         if(check1.isChecked())intent.putExtra("green1", "1");
         if(check2.isChecked())intent.putExtra("green2", "2");
         if(check3.isChecked())intent.putExtra("green3", "3");
         startActivity(intent);
 
 
+    }
+    public void onBeans(View v){
+        Intent intent = new Intent(editGreen.this, addGreen.class);
+        startActivity(intent);
     }
 }

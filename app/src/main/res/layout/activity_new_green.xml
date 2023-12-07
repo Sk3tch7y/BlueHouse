@@ -10,7 +10,120 @@
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="22dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="156dp"
-        tools:layout_editor_absoluteY="330dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="46dp"
+        android:text="Empty"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="182dp"
+        android:layout_marginEnd="40dp"
+        android:text="Name:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="@+id/textView15"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="117dp"
+        android:text="Plants:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="24dp"
+        android:text="Empty"
+        app:layout_constraintBottom_toTopOf="@+id/textView22"
+        app:layout_constraintStart_toStartOf="@+id/textView22" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="24dp"
+        android:text="Empty"
+        app:layout_constraintBottom_toTopOf="@+id/textView23"
+        app:layout_constraintStart_toStartOf="@+id/textView23" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="11dp"
+        android:text="Empty"
+        app:layout_constraintBottom_toTopOf="@+id/textView24"
+        app:layout_constraintEnd_toEndOf="@+id/textView24" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="21dp"
+        android:text="Empty"
+        app:layout_constraintBottom_toTopOf="@+id/textView25"
+        app:layout_constraintStart_toStartOf="@+id/textView25" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="18dp"
+        android:text="Empty"
+        app:layout_constraintBottom_toTopOf="@+id/textView27"
+        app:layout_constraintEnd_toEndOf="@+id/textView27" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:text="Empty"
+        app:layout_constraintBottom_toTopOf="@+id/textView18"
+        app:layout_constraintStart_toStartOf="@+id/textView18" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginBottom="34dp"
+        android:text="Empty"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFEDE1"
+        android:onClick="home"
+        android:text="Home"
+        android:textColor="#0E0707"
+        tools:layout_editor_absoluteX="290dp"
+        tools:layout_editor_absoluteY="643dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

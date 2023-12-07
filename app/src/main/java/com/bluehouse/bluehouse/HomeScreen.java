@@ -74,8 +74,8 @@ public class HomeScreen extends AppCompatActivity implements RecyclerViewAdapter
         tutorial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent tutorial = new Intent(this, Tutorial.class);
-                //startActivity(tutorial);
+                Intent tutorial = new Intent(HomeScreen.this, Tutorial.class);
+                startActivity(tutorial);
             }
         });
 
@@ -219,6 +219,11 @@ public class HomeScreen extends AppCompatActivity implements RecyclerViewAdapter
 
     public void onNotificationClick(int position)   {
         Toast.makeText(getApplicationContext(), "Notification # " + position + " clicked", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, NotificationView.class);
+        intent.putExtra("noteName", mainNotificationList.get(position).getName());
+        intent.putExtra("noteContent", mainNotificationList.get(position).getContent());
+        startActivity(intent);
+
 
     }
 }

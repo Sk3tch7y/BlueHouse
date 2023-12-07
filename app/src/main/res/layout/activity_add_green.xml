@@ -17,6 +17,7 @@
         android:backgroundTint="#FFEDE1"
         android:onClick="addGreenhouse"
         android:text="Add Greenhouse"
+        android:textColor="#090505"
         app:layout_constraintEnd_toEndOf="@+id/checkBox3"
         app:layout_constraintTop_toBottomOf="@+id/checkBox3"
         tools:ignore="HardcodedText,MissingConstraints" />
@@ -102,6 +103,7 @@
         android:backgroundTint="#FFEDE1"
         android:onClick="onClickSelectPlant"
         android:text="New Plant"
+        android:textColor="#090404"
         app:layout_constraintBaseline_toBaselineOf="@+id/button10"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="HardcodedText,MissingConstraints" />

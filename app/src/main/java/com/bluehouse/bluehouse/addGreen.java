@@ -94,7 +94,7 @@ EditText e;
 }
 
 public void addGreenhouse(View v){
-        Intent intent = new Intent(addGreen.this, MainActivity.class);
+        Intent intent = new Intent(addGreen.this, beans.class);
         boolean temp = check1.isChecked();
         boolean humid = check2.isChecked();
         boolean light = check2.isChecked();

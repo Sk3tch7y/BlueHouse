@@ -16,7 +16,9 @@ import androidx.constraintlayout.widget.Group;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class beans extends AppCompatActivity {
-
+String received;
+    String receivedValue4;
+    String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +33,14 @@ public class beans extends AppCompatActivity {
         String receivedValue1 = intent.getStringExtra("green1");
         String receivedValue2 = intent.getStringExtra("green2");
         String receivedValue3 = intent.getStringExtra("green3");
-        String receivedValue4 = intent.getStringExtra("num");
-        secondButton.setEnabled(false);
+        String receivedValue4 = intent.getStringExtra("been");
+         received = intent.getStringExtra("name");
+          name = received;
+        if(name!=null){
+            secondButton.setText(name);
+        secondButton.setEnabled(true);}else if(receivedValue4!=null){ secondButton.setText(receivedValue4);
+            secondButton.setEnabled(true);}else{secondButton.setEnabled(false);}
+
 
         if(receivedValue1!=null){
         green1Button.setText("Empty");
@@ -155,7 +163,8 @@ public class beans extends AppCompatActivity {
                 Intent intent = new Intent(beans.this, editGreen.class);
                 intent.putExtra("Greenhouse1",green1Button.getText().toString() );
                 intent.putExtra("Greenhouse2",green2Button.getText().toString() );
-                intent.putExtra("Greenhouse3",secondButton.getText().toString() );
+                if(name!=null){
+                intent.putExtra("Greenhouse3",name);}else{intent.putExtra("Greenhouse3",receivedValue4);}
 
                 startActivity(intent);
 
