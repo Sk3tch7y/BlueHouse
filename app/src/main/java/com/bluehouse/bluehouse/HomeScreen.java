@@ -18,12 +18,17 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class HomeScreen extends AppCompatActivity implements RecyclerViewAdapter.OnGreenHouseListener, RecyclerViewAdapterVertical.OnNotificationListener {
 
     private ArrayList<GreenhouseData> mainGreenHouseList = new ArrayList<>();
     private ArrayList<Notification> mainNotificationList = new ArrayList<>();
 
-
+    private int numGH;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -169,6 +174,33 @@ public class HomeScreen extends AppCompatActivity implements RecyclerViewAdapter
         list.get(1).setCurrentOther("");
         list.get(2).setCurrentOther("");
         list.get(3).setCurrentOther("***");
+        try {
+            File file = new File(getFilesDir(), "datafile.txt");
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+            String line;
+            while ((line = br.readLine()) != null) {
+                numGH = numGH +1;
+                String[] userData = line.split(",");
+                Boolean ShowTemp =  userData[1].equals("true") ? true: false;
+                Boolean ShowHum = userData[2].equals("true") ? true: false;
+                Boolean ShowLig = userData[3].equals("true") ? true: false;
+                list.add(new GreenhouseData(numGH+4, userData[0], ShowTemp , ShowHum, ShowLig));
+                String temp = (userData[4]).toString()+"C";
+                if(ShowTemp){
+                    list.get(numGH+3).setCurrentTemp(userData[4]+"C");
+                }
+                if(ShowHum){
+                    list.get(numGH+3).setCurrentHumidity(userData[5]+"%");
+                }
+                if(ShowLig){
+                    list.get(numGH+3).setCurrentLight(userData[6]+"LUX");
+                }
+            }
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     private void initNotificationArray(ArrayList<Notification> list)    {
 
